@@ -67,6 +67,18 @@ class devns {
   		zone    => 'public',
 	}
 
-	
+	firewalld_port { 'Open port53/tcp  in the public zone':
+ 		 ensure   => present,
+  		zone     => 'public',
+  		port     => 53,
+  		protocol => 'tcp',
+	}
+
+	firewalld_port { 'Open port53/udp  in the public zone':
+ 		 ensure   => present,
+  		zone     => 'public',
+  		port     => 53,
+  		protocol => 'udp',
+	}
 
 }
