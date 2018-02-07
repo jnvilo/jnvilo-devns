@@ -1,9 +1,14 @@
 class devns::slave{
+
+   class { 'powerdns':
+                db_password => 'password',
+                db_root_password => 'password',
+        }
 	
 	powerdns::config { 'slave':
         ensure => present,
         setting => 'slave',
-        value => 'no',
+        value => 'yes',
         type => 'authoritative',
         }
 

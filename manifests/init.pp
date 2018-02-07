@@ -31,10 +31,6 @@
 #
 class devns {
 
-	class { 'powerdns':
- 	   	db_password => 'password',
-    		db_root_password => 'password',
-	}
 
 	class { '::apache':
   		mpm_module => 'prefork',

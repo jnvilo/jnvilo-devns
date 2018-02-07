@@ -1,4 +1,4 @@
-class devns::supermaster{
+class devns::master{
 
 	class { 'powerdns':
  	   	db_password => 'password',
@@ -16,14 +16,14 @@ class devns::supermaster{
 	powerdns::config { 'api-key':
     	ensure => present,
     	setting => 'api-key',
-    	value => 'keykey',
+    	value => '449b656f62dcdd8436646b2dc4b248dc77eda5f2',
     	type => 'authoritative',
 	}
 
 	powerdns::config { 'allow-axfr-ips':
         ensure => present,
         setting => 'allow-axfr-ips',
-        value => '192.168.0.0/16',
+        value => '165.227.138.23/32,178.62.232.177/32',
         type => 'authoritative',
         }
 
